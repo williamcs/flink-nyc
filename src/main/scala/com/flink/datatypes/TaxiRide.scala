@@ -65,8 +65,7 @@ object TaxiRide {
       val travelDistance = if (tokens(6).length > 0) tokens(6).toFloat else 0.0f
 
       new TaxiRide(rideId, time, isStart, GeoPoint(lon, lat), passengerCnt, travelDistance)
-    }
-    catch {
+    } catch {
       case nfe: NumberFormatException =>
         throw new RuntimeException("Invalid record: " + line, nfe)
     }
